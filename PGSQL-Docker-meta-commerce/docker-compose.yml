@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  app-postgres:
+    restart: always
+    build:
+      context: ./pgsql
+    volumes:
+      - ./data/pgdata/:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: spe3d
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: meta_commerce
+    ports:
+      - 5432:5432
+    networks:
+      - platform-server
+    logging:
+      options:
+        max-size: "100m"
+
+networks:
+  platform-server:
+    driver: bridge
