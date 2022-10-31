@@ -1,0 +1,12 @@
+version: '3'
+services:
+  database:
+    image: postgres:13
+    container_name: pg_slave_db
+    restart: always
+    volumes:
+      - ./data/postgresslave:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5434:5432"
+    environment:
+      - 'POSTGRES_PASSWORD=123123'

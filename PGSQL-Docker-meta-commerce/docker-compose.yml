@@ -9,7 +9,7 @@ services:
       - ./data/pgdata/:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: spe3d
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_PASSWORD: 21267e9985406b
       POSTGRES_DB: meta_commerce
     ports:
       - 5432:5432
